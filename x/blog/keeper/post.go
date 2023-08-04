@@ -60,6 +60,6 @@ func (k Keeper) Setpost(ctx sdk.Context, post types.Post) {
 }
 
 func (k Keeper) RemovePost(ctx sdk.Context, id uint64) {
-	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.PostCountKey))
+	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.PostKey))
 	store.Delete(GetPostIDBytes(id))
 }
